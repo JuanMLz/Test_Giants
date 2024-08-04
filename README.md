@@ -39,40 +39,40 @@ pip install -r requirements.txt
 
    **The Bugs**
 
-- Duplicate arguments in is_valid_input: The is_valid_input method had a duplicate argument issue where the start_date argument was repeated. This caused the method to not correctly check the end_date. Fixed it by naming the arguments correctly.
+- *Duplicate arguments in is_valid_input:* The is_valid_input method had a duplicate argument issue where the start_date argument was repeated. This caused the method to not correctly check the end_date. Fixed it by naming the arguments correctly.
 
-- DataFrame copy issue in calc_sum: The calc_sum method directly modified the DataFrame_df, which could cause issues. The solution is to use .copy() of _df before making the changes to ensure the original data is not affected.
+- *DataFrame copy issue in calc_sum:* The calc_sum method directly modified the DataFrame_df, which could cause issues. The solution is to use .copy() of _df before making the changes to ensure the original data is not affected.
 
-- Incorrect method name in max_val_range: In max_val_range, the method name for calling calc_sum was incorrect, causing an error. Use the correct method name to fix this.
+- *Incorrect method name in max_val_range:* In max_val_range, the method name for calling calc_sum was incorrect, causing an error. Use the correct method name to fix this.
 
-- Incorrect number of days in max_val_range: The method incorrectly counted the number of rows instead of the actual number of calendar days, causing an inaccurate 500-day period. The logic has been updated to ensure that 500 calendar days are accurately considered.
+- *Incorrect number of days in max_val_range:* The method incorrectly counted the number of rows instead of the actual number of calendar days, causing an inaccurate 500-day period. The logic has been updated to ensure that 500 calendar days are accurately considered.
 
-- Removal of unused imports: Unused imports (such as Timedelta) have been removed to clean up the code and improve efficiency.
+- *Removal of unused imports:* Unused imports (such as Timedelta) have been removed to clean up the code and improve efficiency.
 
 
 2. **Code Enhancement**: In addition to fixing bugs, I improved the code's robustness and maintainability. This included restructuring the code to facilitate easier updates and enhancements.
 
     **The changes**
 
-- Merged Functionality in reshape_df: The earned method was only adding a column to the DataFrame, which was used in reshape_df. I integrated this functionality directly into reshape_df and removed the earned method.
+- *Merged Functionality in reshape_df:* The earned method was only adding a column to the DataFrame, which was used in reshape_df. I integrated this functionality directly into reshape_df and removed the earned method.
 
-- Removed Redundant compound_interest Method: The compound_interest method was redundant because the same column was already created in the calc_amount method. Therefore, I removed the compound_interest method.
+- *Removed Redundant compound_interest Method:* The compound_interest method was redundant because the same column was already created in the calc_amount method. Therefore, I removed the compound_interest method.
 
-- Simplified is_valid_input Method: The frequency parameter in is_valid_input was not used, so I removed it. Additionally, the check for capital inside is_valid_input was unnecessary and was also removed.
+- *Simplified is_valid_input Method:* The frequency parameter in is_valid_input was not used, so I removed it. Additionally, the check for capital inside is_valid_input was unnecessary and was also removed.
 
-- Refactored Compound Interest Calculation in calc_amount: I streamlined the line of code for calculating compound interest in calc_amount to make it more direct and readable.
+- *Refactored Compound Interest Calculation in calc_amount:* I streamlined the line of code for calculating compound interest in calc_amount to make it more direct and readable.
 
-- Introduced best_df in max_val_range: I created a new DataFrame, best_df, containing the results of the 500-day period with the best investment return. This makes it easier to iterate over this DataFrame in other methods.
+- *Introduced best_df in max_val_range:* I created a new DataFrame, best_df, containing the results of the 500-day period with the best investment return. This makes it easier to iterate over this DataFrame in other methods.
 
-- Added Error Handling for API Connection: I added a try-except block in calc_amount to handle potential API connection errors gracefully.
+- *Added Error Handling for API Connection:* I added a try-except block in calc_amount to handle potential API connection errors gracefully.
 
-- Improved Column Creation in calc_amount: I refined the line of code that creates the 'compound' column for better readability.
+- *Improved Column Creation in calc_amount:* I refined the line of code that creates the 'compound' column for better readability.
 
-- Adjusted save_csv Method: I modified the save_csv method to create different CSV files based on the frequency parameter.
+- *Adjusted save_csv Method:* I modified the save_csv method to create different CSV files based on the frequency parameter.
 
-- Removed Redundant run_example Method: The run_example method was removed because the calc_amount method is already called in the main code, making it redundant.
+- *Removed Redundant run_example Method:* The run_example method was removed because the calc_amount method is already called in the main code, making it redundant.
 
-- Added Frequency-Based CSV Creation: In the main class, I added calls for daily, monthly, and yearly frequencies, each creating a distinct CSV file.
+- *Added Frequency-Based CSV Creation:* In the main class, I added calls for daily, monthly, and yearly frequencies, each creating a distinct CSV file.
 
 
 
@@ -81,32 +81,31 @@ pip install -r requirements.txt
 
     **The tests**
 
-- The test_is_valid_input method checks three cases. First, it checks for valid data to make sure it is in the correct format. Second, it checks what happens if the start date is later than the end date and expects an error message. Finally, it checks for invalid date formats (strings instead of dates) to make sure the method throws an error on incorrect input types.
+- The *test_is_valid_input* method checks three cases. First, it checks for valid data to make sure it is in the correct format. Second, it checks what happens if the start date is later than the end date and expects an error message. Finally, it checks for invalid date formats (strings instead of dates) to make sure the method throws an error on incorrect input types.
 
-- The test_reshape_df_invalid_Frequency method tests how the code handles invalid frequency values. If an unsupported frequency is specified, an error is raised.
+- The *test_reshape_df_invalid_Frequency* method tests how the code handles invalid frequency values. If an unsupported frequency is specified, an error is raised.
 
 ## How the code works
 
-How the Code Works
-The main method of the code is calc_amount, which orchestrates the entire process of calculating the most profitable investment period. Here is a step-by-step overview of how it operates:
+The main method of the code is *calc_amount*, which orchestrates the entire process of calculating the most profitable investment period. Here is a step-by-step overview of how it operates:
 
--Data Extraction and Filtering:
+*-Data Extraction and Filtering:*
 The calc_amount method starts by extracting data from an API. It constructs a URL based on the provided start and end dates, which filters the data to the specific period required by the technical test.
 The API response is then converted into a DataFrame.
 
--Input Validation:
+*- Input Validation:*
 The is_valid_input method is used to ensure that the start and end dates are of the correct type and format. This validation is crucial for preventing errors in subsequent calculations.
 
--Calculation of Compound Interest:
+*- Calculation of Compound Interest:*
 Within calc_amount, the compound interest is calculated using the given capital and the extracted data. This involves computing the accumulated value over time.
 
--Determining the Most Profitable Period:
+*- Determining the Most Profitable Period:*
 The max_val_range method is called to identify the 500-day period with the highest return. This method processes the DataFrame to find the optimal investment period.
 
--Data Formatting:
+*- Data Formatting:*
 After identifying the best 500 days, the reshape_df method is used to format the DataFrame according to the specified frequency (daily, monthly, or yearly).
 
--Saving Results:
+*- Saving Results:*
 Finally, the save_csv method saves the resulting DataFrames to CSV files. It creates different files based on the specified frequency, providing a clear output of the results.
 
 By structuring the code in this way, the process from data extraction to result output is streamlined and efficient, ensuring accurate and easy-to-understand results.
