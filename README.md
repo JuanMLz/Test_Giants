@@ -43,20 +43,20 @@ The expected outcome of this challenge is to identify the most profitable period
 
 - **Removal of unused imports:** Unused imports (such as Timedelta) have been removed to clean up the code and improve efficiency.
 
-- **Duplicate arguments in is_valid_input:** The is_valid_input method had a duplicate argument issue where the start_date argument was repeated. This caused the method to not correctly check the end_date. Fixed it by naming the arguments correctly.
+- **Duplicate arguments in "is_valid_input:"** The "is_valid_input" method had a duplicate argument issue where the "start_date" argument was repeated. This caused the method to not correctly check the "end_date". Fixed it by naming the arguments correctly.
 
-- **DataFrame copy issue in calc_sum:** The calc_sum method directly modified the DataFrame "_df", which could cause issues. The solution is to use .copy() of _df before making the changes to ensure the original data is not affected.
+- **DataFrame copy issue in "calc_sum":** The "calc_sum" method directly modified the DataFrame "_df", which could cause issues. The solution is to use .copy() of "_df" before making the changes to ensure the original data is not affected.
 
-- **Incorrect method name in max_val_range:** In max_val_range, the method name for calling calc_sum was incorrect, causing an error. Use the correct method name to fix this.
+- **Incorrect method name in "max_val_range":** In max_val_range, the method name for calling "calc_sum" was incorrect, causing an error. Use the correct method name to fix this.
 
-- **Incorrect number of days in max_val_range:** The method incorrectly counted the number of rows instead of the actual number of calendar days, causing an inaccurate 500-day period. The logic has been updated to ensure that 500 calendar days are accurately considered.
+- **Incorrect number of days in "max_val_range":** The method incorrectly counted the number of rows instead of the actual number of calendar days, causing an inaccurate 500-day period. The logic has been updated to ensure that 500 calendar days are accurately considered.
 
 
 2. **Code Enhancement**: In addition to fixing bugs, I improved the code's robustness and maintainability. This included restructuring the code to facilitate easier updates and enhancements.
 
     **The changes**
 
-- **Merged Functionality in reshape_df:** The "earned" method was only adding a column to the DataFrame, which was used in reshape_df. I integrated this functionality directly into "reshape_df" and removed the earned method.
+- **Merged Functionality in "reshape_df":** The "earned" method was only adding a column to the DataFrame, which was used in "reshape_df". I integrated this functionality directly into "reshape_df" and removed the earned method.
 
 - **Removed Redundant "compound_interest" Method:** The "compound_interest" method was redundant because the same column was already created in the "calc_amount" method. Therefore, I removed the "compound_interest" method.
 
@@ -128,6 +128,7 @@ Any feedback or suggestions for improvements are highly appreciated.
 - **Email :** juanmlope@gmail.com
 
 - **Linkedin :** https://www.linkedin.com/in/juan-m-lopes/
+
 
 ## License
 
