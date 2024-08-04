@@ -121,11 +121,13 @@ Any feedback or suggestions for improvements are highly appreciated.
 
 ## Contact Information
 
-*Name :* Juan Moraes Lopes
-*Phone :* (11) 98387-5562
-*Email :* juanmlope@gmail.com
-*Linkedin :* https://www.linkedin.com/in/juan-m-lopes/
+- **Name :** Juan Moraes Lopes
 
+- **Phone :** (11) 98387-5562
+
+- **Email :** juanmlope@gmail.com
+
+- **Linkedin :** https://www.linkedin.com/in/juan-m-lopes/
 
 ## License
 
