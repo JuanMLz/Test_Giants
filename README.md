@@ -119,6 +119,14 @@ This repository is in response to the technical test by Giant Steps Capital. The
 
 Any feedback or suggestions for improvements are highly appreciated.
 
+## Contact Information
+
+*Name :* Juan Moraes Lopes
+*Phone :* (11) 98387-5562
+*Email :* juanmlope@gmail.com
+*Linkedin :* https://www.linkedin.com/in/juan-m-lopes/
+
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
